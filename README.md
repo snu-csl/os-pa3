@@ -267,22 +267,22 @@ The following examples are obtained by running the `task` program under various 
 ### Default `xv6` scheduler (no affinity)
 `pin()` is a no-op, so every hart's scheduler can run any runnable process; the timeline shows processes freely appearing on all harts with no placement constraints.
 
-![PNG image](https://github.com/snu-csl/os-pa3-draft/blob/main/xv6-default.png)
+![PNG image](https://github.com/snu-csl/os-pa3/blob/main/xv6-default.png)
 
 ### Default `xv6` scheduler + `pin()`
 Schedulers now respect the CPU affinity mask; a process runs only on harts allowed by its mask, so harts 1 and 2 stay idle while each process executes on permitted harts.
 
-![PNG image](https://github.com/snu-csl/os-pa3-draft/blob/main/xv6-pin.png)
+![PNG image](https://github.com/snu-csl/os-pa3/blob/main/xv6-pin.png)
 
 ### Per-core run queues (no load balancing)
 Each hart maintains its own run queue, and processes are enqueued according to their affinity masks. If the mask changes from 3 to 9 after `fork()`, any tasks that were placed on core 1 are migrated to a permitted hart (0 or 3), while all others remain on their original harts.
 
-![PNG image](https://github.com/snu-csl/os-pa3-draft/blob/main/xv6-percoreq.png)
+![PNG image](https://github.com/snu-csl/os-pa3/blob/main/xv6-percoreq.png)
 
 ### Per-core run queues + load balancing
 In addition to honoring CPU affinity masks, idle (or lightly loaded) harts also pull runnable work from busy harts; in the figure, two processes (PID 7 and 8) are rebalanced from hart 3 to hart 0 — reducing idle time while still respecting CPU affinity.
 
-![PNG image](https://github.com/snu-csl/os-pa3-draft/blob/main/xv6-loadbalance.png)
+![PNG image](https://github.com/snu-csl/os-pa3/blob/main/xv6-loadbalance.png)
 
 ## Restrictions
 
