@@ -1,6 +1,6 @@
 # 4190.307 Operating Systems (Fall 2025)
 # Project #3: The Road to Balance
-### Due: 11:59 PM, November 2 (Sunday)
+### Due: 11:59 PM, November ~~2 (Sunday)~~ 6 (Thursday)
 
 ## Introduction
 
