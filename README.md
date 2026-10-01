@@ -27,7 +27,7 @@ The following timing diagram shows the scheduling of three processes, $P_1 = (1,
 
 First, implement the `sched_setattr()` system call. The system call number of `sched_setattr()` is already assigned to 30 in the `./kernel/syscall.h` file. 
 
-__SYNOPSYS__
+__SYNOPSIS__
 ```
     int sched_setattr(int pid, int runtime, int period);
 ```
@@ -48,7 +48,7 @@ __RETURN VALUE__
 
 Next, you need to implement the `sched_yield()` system call for the EDF scheduler. The system call number of `sched_yield()` is already assigned to 31 in the `./kernel/syscall.h` file. 
 
-__SYNOPSYS__
+__SYNOPSIS__
 ```
     void sched_yield();
 ```
